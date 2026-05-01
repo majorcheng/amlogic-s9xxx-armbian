@@ -49,6 +49,9 @@ on:
           - resolute
           - noble
 
+permissions:
+  contents: write
+
 env:
   TZ: Etc/UTC
   KERNEL_VERSION: 6.18.y

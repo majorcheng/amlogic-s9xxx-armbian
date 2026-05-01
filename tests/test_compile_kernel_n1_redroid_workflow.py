@@ -16,6 +16,7 @@ def main() -> None:
     workflow = yaml.load(text, Loader=yaml.BaseLoader)
 
     assert workflow["name"] == "编译 N1 Redroid 6.18 内核"
+    assert workflow["permissions"]["contents"] == "write"
     assert workflow["env"]["KERNEL_VERSION"] == "6.18.y"
     assert workflow["env"]["RELEASE_TAG"] == "kernel_n1_redroid_6.18"
     assert workflow["on"]["workflow_dispatch"]["inputs"]["kernel_source"]["default"] == "unifreq"
