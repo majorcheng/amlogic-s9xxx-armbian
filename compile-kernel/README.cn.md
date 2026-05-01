@@ -71,7 +71,7 @@ sudo apt-get install -y $(cat compile-kernel/tools/script/ubuntu2404-build-armbi
 
 1. 在 [Action](https://github.com/ophub/amlogic-s9xxx-armbian/actions) 页面选择 **_`Compile the kernel`_**，点击 **_`Run workflow`_** 按钮即可开始编译。
 
-2. 详见模板 [compile-kernel-via-docker.yml](../.github/workflows/compile-kernel-via-docker.yml)。代码如下：
+2. 通用模板详见 [compile-kernel.yml](../.github/workflows/compile-kernel.yml)。若需为 N1（Phicomm N1 / s905d）准备 redroid Docker，可直接运行专用模板 [compile-kernel-n1-redroid-6.18.yml](../.github/workflows/compile-kernel-n1-redroid-6.18.yml)，该模板会在 `stable` 的 `config-6.18` 基础上额外设置 `CONFIG_PSI=y` 和 `CONFIG_PSI_DEFAULT_DISABLED=n`。通用调用示例如下：
 
 ```yaml
 - name: Compile the kernel
